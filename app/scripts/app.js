@@ -17,7 +17,11 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ngMaterial',
+    'mwl.calendar', 
+    'ui.bootstrap',
+    'multipleDatePicker'
   ])
   .config(function ($routeProvider) {
     $routeProvider

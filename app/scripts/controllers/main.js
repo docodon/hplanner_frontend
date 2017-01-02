@@ -7,11 +7,9 @@
  * # MainCtrl
  * Controller of the hplannerFrontendApp
  */
-angular.module('hplannerFrontendApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+ angular.module('hplannerFrontendApp')
+ .controller('MainCtrl',function ($scope) {
+
+  
+
+});
