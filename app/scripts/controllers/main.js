@@ -12,8 +12,24 @@
 
  	var value = HolidayListService.dates();
  	value.then(function(result){
- 		$scope.val = result
- 		$scope.holiday_list = result['holiday_list'];
- 	})
- 	
+ 		
+ 		var resp = result['holiday_list'];
+		$scope.holiday_list = []
+
+ 		if(resp==-1)
+ 		{
+ 			$scope.from = moment.now();
+ 			$scope.to = moment.now()+365
+ 		}
+ 		else
+ 		{
+ 			for (var i = 0; i < resp.length; i++) 
+    			$scope.holiday_list.push( moment(resp[i]) )
+
+ 			$scope.from = moment(result['date_from'])
+ 			$scope.to = moment(result['date_to'])	
+		}
+
+	});
+
 });

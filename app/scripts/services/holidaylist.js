@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('hplannerFrontendApp')
  .service('HolidayListService',function($http) {
 	this.dates = function(){
@@ -7,5 +9,5 @@ angular.module('hplannerFrontendApp')
 		},function(response) {
 			return -1;
 		});
-	}
+	};
 });
