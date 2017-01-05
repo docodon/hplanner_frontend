@@ -1,6 +1,6 @@
-<div flex>
-    <multiple-date-picker ng-model="holiday_list"></multiple-date-picker>
-</div>
-{{holiday_list}}
-{{from}}
-{{to}}
+<form ng-submit="submit()" novalidate class="css-form">
+    <multiple-date-picker ng-model="submit_form.holiday_list"></multiple-date-picker>
+    <label>Leaves: <input type="number" ng-model="submit_form.leaves" required /></label><br />
+	<input type="submit" ng-click="plans_resp()" value="Save" />
+</form>
+{{ submit_form }}
