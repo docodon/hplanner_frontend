@@ -2,12 +2,16 @@
 
 angular.module('hplannerFrontendApp')
  .service('UserPreferenceService',function($http) {
-	this.plans = function(submit_form){
+
+ 	this.recommendations = {};
+
+	this.plans = function(submit_form,recommendations){
 		submit_form["holiday_list"] = date_list(submit_form["holiday_list"]);
 		submit_form["date_from"] = date_rep(submit_form["date_from"]);
 
 		return $http.post("http://localhost:3000/api/leaves/gen_plan.json",submit_form)
 		.then(function(response) {
+			 recommendations['api_recommendations'] = response.data;
 			 return response.data;
 		},function(response) {
 			return -1;

@@ -8,14 +8,15 @@
  * Controller of the hplannerFrontendApp
  */
  angular.module('hplannerFrontendApp')
- .controller('MainCtrl',function (HolidayListService, UserPreferenceService, $scope) {
+ .controller('MainCtrl',function (HolidayListService, UserPreferenceService, $scope, $location, $interval) {
 
  	var response = HolidayListService.dates();
 
  	response.then(function(result){
  		
  		var resp = result['holiday_list'];
-		
+		$scope.circle = 0;
+
 		$scope.submit_form = {
 			holiday_list: [],
 			leaves: 0
@@ -38,12 +39,22 @@
 	});
 
 
- 	$scope.submit = function() {
+ 	$scope.submit = function(){
     	
- 		resp = UserPreferenceService.plans($scope.submit_form);
- 		resp.then(function(result){
- 		});
+ 		$interval(function() {
+			$scope.circle += 1;
+        	if ($scope.circle > 100) {
+          		$scope.circle = 30;
+        	}
+      	}, 100);
 
+
+ 		UserPreferenceService.plans($scope.submit_form,UserPreferenceService.recommendations)
+ 		.then(function(result){
+ 			$location.path("/recommendations")
+ 		},function(result){
+ 			$location.path("/") 			
+ 		});
 
     };
 
