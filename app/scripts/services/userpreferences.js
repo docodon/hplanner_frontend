@@ -3,7 +3,7 @@
 angular.module('hplannerFrontendApp')
  .service('UserPreferenceService',function($http) {
 
- 	this.recommendations = {};
+ 	this.recommendations = {'api_recommendations':-1};
 
 	this.plans = function(submit_form,recommendations){
 		submit_form["holiday_list"] = date_list(submit_form["holiday_list"]);

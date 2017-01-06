@@ -12,66 +12,83 @@
   <link rel="stylesheet" href="bower_components/angular-multiple-date-picker/dist/multipleDatePicker.css" />
   
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/form.css">
 
 </head>
 
-<body ng-app="hplannerFrontendApp">
- 
-  <div>
-    <md-content class="md-padding">
-      <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-      </md-nav-bar>
-    </md-content>
-  </div>
+<body ng-app="hplannerFrontendApp" layout="column" layout-align="start start">
+
+  <md-toolbar class="md-hue-2 header">
+    <div class="md-toolbar-tools">
+    <!--
+      <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+          <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+        </md-button>
+    -->    
+    <h2>
+      <span>Holidays planner</span>
+    </h2>
+    <span flex=""></span>
+    <!--
+    <md-button class="md-icon-button" aria-label="Favorite">
+          <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+        </md-button>
+    <md-button class="md-icon-button" aria-label="More">
+      <md-icon md-svg-icon="img/icons/more_vert.svg">
+      </md-icon>
+    </md-button>
+    -->      
+    </div>
+    </md-toolbar>
 
 
-  <div class="container">
-    <div ng-view=""></div>
-  </div>
+    <div class="container" layout="column">
+      <div ng-view=""></div>
+    </div>
 
-  <div>
-    <md-content class="md-padding">
-      <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-      </md-content>
-  </div>
+    <div>
+      <md-content class="md-padding">
+        <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+        </md-content>
+      </div>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-    <script>
-     !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-     }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+      <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+         (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+         r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-     ga('create', 'UA-XXXXX-X');
-     ga('send', 'pageview');
-   </script>
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+     </script>
 
-   <!-- build:js(.) scripts/vendor.js -->
-   <!-- bower:js -->
-   <script src="bower_components/jquery/dist/jquery.js"></script>
-   <script src="bower_components/angular/angular.js"></script>
-   <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
-   <script src="bower_components/angular-animate/angular-animate.js"></script>
-   <script src="bower_components/angular-aria/angular-aria.js"></script>
-   <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-   <script src="bower_components/angular-messages/angular-messages.js"></script>
-   <script src="bower_components/angular-resource/angular-resource.js"></script>
-   <script src="bower_components/angular-route/angular-route.js"></script>
-   <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-   <script src="bower_components/angular-touch/angular-touch.js"></script>
-   <script src="bower_components/angular-material/angular-material.js"></script>
-   <script src="bower_components/moment/moment.js"></script>
-   <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-   <script src="bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.js"></script>
-   <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-   <script src="bower_components/angular-multiple-date-picker/dist/multipleDatePicker.min.js"></script>
+     <!-- build:js(.) scripts/vendor.js -->
+     <!-- bower:js -->
+     <script src="bower_components/jquery/dist/jquery.js"></script>
+     <script src="bower_components/angular/angular.js"></script>
+     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+     <script src="bower_components/angular-animate/angular-animate.js"></script>
+     <script src="bower_components/angular-aria/angular-aria.js"></script>
+     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+     <script src="bower_components/angular-messages/angular-messages.js"></script>
+     <script src="bower_components/angular-resource/angular-resource.js"></script>
+     <script src="bower_components/angular-route/angular-route.js"></script>
+     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+     <script src="bower_components/angular-touch/angular-touch.js"></script>
+     <script src="bower_components/angular-material/angular-material.js"></script>
+     <script src="bower_components/moment/moment.js"></script>
+     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+     <script src="bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.js"></script>
+     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+     <script src="bower_components/angular-multiple-date-picker/dist/multipleDatePicker.min.js"></script>
 
-   <!-- build:js({.tmp,app}) scripts/scripts.js -->
-  <script src="scripts/app.js"></script>
-  <script src="scripts/services/holidaylist.js"></script>
-  <script src="scripts/services/userpreferences.js"></script>
-  <script src="scripts/controllers/main.js"></script>
-  <script src="scripts/controllers/recommendations.js"></script>
-   
- </body>
- </html>
+     <!-- build:js({.tmp,app}) scripts/scripts.js -->
+     <script src="scripts/app.js"></script>
+     <script src="scripts/services/holidaylist.js"></script>
+     <script src="scripts/services/userpreferences.js"></script>
+     <script src="scripts/controllers/main.js"></script>
+     <script src="scripts/controllers/recommendations.js"></script>
+
+   </body>
+   </html>

@@ -11,7 +11,7 @@
  .controller('MainCtrl',function (HolidayListService, UserPreferenceService, $scope, $location, $interval) {
 
  	var response = HolidayListService.dates();
-
+ 
  	response.then(function(result){
  		
  		var resp = result['holiday_list'];

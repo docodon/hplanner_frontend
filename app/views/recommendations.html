@@ -1,7 +1,13 @@
 <multiple-date-picker  
-	ng-model="recommendations[0]['plan']" 
+	ng-model="recommendations[rnumber]['plan']" 
 	disable-days-before="date_from"
 	disable-days-after="date_to"
 	day-click=disableClick
+	month = 'months[0]'
+	disable-navigation="true"
 >		
 </multiple-date-picker>
+
+<md-select ng-model="rnumber" placeholder="" class="md-underline">
+  <md-option ng-repeat="i in recommendations" value="{{i.id}}">recommendation {{i.id+1}} -  [{{i.fitness_score}}]</md-option>
+</md-select>

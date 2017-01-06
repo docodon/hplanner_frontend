@@ -1,20 +1,22 @@
 'use strict';
 
  angular.module('hplannerFrontendApp')
- .controller('RecommendCtrl',function (UserPreferenceService, $scope) {
+ .controller('RecommendCtrl',function (UserPreferenceService, $scope, $location) {
 
  	var response = UserPreferenceService.recommendations['api_recommendations'];
- 	
- 	$scope.response = response;
+ 	if(response == -1)
+ 		$location.path("/");	
+
  	$scope.date_from = moment(response['date_from']) ;
  	$scope.date_to = moment($scope.date_from).add(365,'days');
- 	
- 	var array_resp = response["response"]
+ 	$scope.rnumber = 0;	
+
+ 	var array_resp = response["response"];
  	$scope.recommendations = new Array();
 
  	for(var i=0;i<array_resp.length;i++)
  	{
- 		var tmp = {}
+ 		var tmp = {'id':i};
  		tmp['fitness_score'] = array_resp[i]['fitness_score'];
  		tmp['plan'] = new Array();
  		for(var j=0;j<array_resp[i]['array'].length;j++)
@@ -28,5 +30,15 @@
  	$scope.disableClick = function(event) {
         event.preventDefault();
     }
+
+
+	var months = [];
+    var date = moment($scope.date_from);
+    var monthNextYear = moment(date).add(366, 'd');
+
+	for(; date < monthNextYear; date.add(1, 'month')){
+   		 months.push(moment(date));
+	}
+	$scope.months = months;
 
 });

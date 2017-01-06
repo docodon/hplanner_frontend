@@ -23,7 +23,7 @@ angular
     'ui.bootstrap',
     'multipleDatePicker'
   ])
-  .config(function ($routeProvider,$httpProvider) {
+  .config(function ($routeProvider,$httpProvider,$mdThemingProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -41,5 +41,5 @@ angular
     
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
-  
+
   });
