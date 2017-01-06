@@ -1,8 +1,12 @@
 <md-progress-circular md-mode="determinate" value="{{circle}}"></md-progress-circular></div>
 
 <form ng-submit="submit()" novalidate class="css-form">
-    <multiple-date-picker ng-model="submit_form.holiday_list"></multiple-date-picker>
+    <multiple-date-picker  
+    	ng-model="submit_form.holiday_list" 
+    	disable-days-before="submit_form.date_from"
+    	disable-days-after="submit_form.date_to"
+    >		
+    </multiple-date-picker>
     <label>Leaves: <input type="number" ng-model="submit_form.leaves" required /></label><br />
 	<input type="submit" ng-click="plans_resp()" value="Save" />
 </form>
-{{ submit_form }}
