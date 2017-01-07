@@ -34,7 +34,7 @@
 
 	var months = [];
     var date = moment($scope.date_from);
-    var monthNextYear = moment(date).add(366, 'd');
+    var monthNextYear = moment(date).add(550, 'd');
 
 	for(; date < monthNextYear; date.add(1, 'month')){
    		 months.push(moment(date));
@@ -47,6 +47,11 @@
    	 	ar.push(i);
    	 return ar;   
 	}
+
+  $scope.change_rnumber = function(num){
+    $scope.rnumber = num;
+  };
+
 
 
 });

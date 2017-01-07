@@ -49,9 +49,9 @@
 	
 	$scope.months = months;
 
-    $scope.change_fmonth = function(num){
-    	$scope.fmonth = num;
-    };
+  $scope.change_fmonth = function(num){
+  	$scope.fmonth = num;
+  };
 
 
 

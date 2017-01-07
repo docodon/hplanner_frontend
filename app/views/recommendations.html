@@ -1,31 +1,29 @@
-<div layout="column" layout-align="space-between">
-	
-	<div ng-repeat="i in getNumber(3)" flex layout="row" layout-align="space-between">
-		<div ng-repeat="j  in getNumber(4)">
+<div layout="column" class="padding-left-5 padding-right-5">
+
+	<md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+      
+  	<md-nav-item class="padding-left-5" md-nav-click="change_rnumber(0)" name="page1">recommendation 1</md-nav-item>
+
+  	<md-nav-item md-nav-click="change_rnumber(1)" name="page2">recommendation 2</md-nav-item>
+    
+  	<md-nav-item md-nav-click="change_rnumber(2)" name="page3">recommendation 3</md-nav-item>
+
+  	<md-nav-item md-nav-click="change_rnumber(3)" name="page4">recommendation 4</md-nav-item>
+
+	</md-nav-bar>
+
+	<div ng-repeat="i in getNumber(3)" layout="row" layout-xs="column" class="padding-left-1 padding-right-1">	
+		<div class="padding-left-1 padding-right-1 padding-top-1" ng-repeat="j  in getNumber(5)">
 			<multiple-date-picker  
 				ng-model="recommendations[rnumber]['plan']" 
 				disable-days-before="date_from"
 				disable-days-after="date_to"
 				day-click=disableClick
-				month = "months[i*4+j]"
+				month = "months[i*5+j]"
 				disable-navigation="true"
 			>		
 			</multiple-date-picker>
 		</div>
 	</div>
-
-	<multiple-date-picker  
-		ng-model="recommendations[rnumber]['plan']" 
-		disable-days-before="date_from"
-		disable-days-after="date_to"
-		day-click=disableClick
-		month = "months[12]"
-		disable-navigation="true"
-	>		
-	</multiple-date-picker>
-
+	
 </div>
-
-<md-select ng-model="rnumber" placeholder="" class="md-underline">
-  <md-option ng-repeat="i in recommendations" value="{{i.id}}">recommendation {{i.id+1}} -  [{{i.fitness_score}}]</md-option>
-</md-select>
