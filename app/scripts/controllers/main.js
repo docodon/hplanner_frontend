@@ -17,8 +17,9 @@
  		var resp = result['holiday_list'];
 		$scope.circle = 0;
 		$scope.fmonth = 0;
-
-		$scope.submit_form = {
+    $scope.submited = false; 
+		
+    $scope.submit_form = {
 			holiday_list: [],
 			leaves: 0
 		}
@@ -26,7 +27,7 @@
  		if(resp==-1)
  		{
  			$scope.submit_form.date_from = moment.now();
- 			$scope.submit_form.date_to = moment.now()+365
+ 			$scope.submit_form.date_to = moment.now()+365;
  		}
  		else
  		{
@@ -64,6 +65,7 @@
         	}
       	}, 100);
 
+    $scope.submited = true; 
 
  		UserPreferenceService.plans($scope.submit_form,UserPreferenceService.recommendations)
  		.then(function(result){

@@ -1,6 +1,6 @@
-<div class="padding-left-5 padding-right-5 padding-top-2">
+<div flex class="padding-left-5 padding-right-5 padding-bottom-2">
 
-<md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+<md-nav-bar hide-xs md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
       
   <md-nav-item  md-nav-click="change_fmonth(0)" name="page1">1-4</md-nav-item>
 
@@ -23,17 +23,15 @@
 </multiple-date-picker>
 
 
-
-	
   <form ng-submit="submit()" novalidate>
     <md-input-container class="md-block"> 
-      <div  class="padding-bottom-2">
+      <div class="padding-bottom-2">
         <label class="font-10">
           Select prefered dates *
         </label>
       </div>
 
-      <div flex layout="row" layout-xs="column" style="top-padding: 5%">
+      <div flex layout="row" hide-xs style="top-padding: 5%">
         <div ng-repeat="i  in getNumber(4)">
           <div flex class="padding-left-3 padding-right-3 padding-bottom-7">
             <multiple-date-picker  
@@ -47,6 +45,22 @@
           </div>
         </div>
       </div>
+
+      <div flex layout="column" hide-gt-xs class="padding-top-8">
+        <div ng-repeat="i  in getNumber(13)">
+          <div flex class="padding-left-3 padding-right-3 padding-bottom-7">
+            <multiple-date-picker  
+              ng-model="submit_form.holiday_list" 
+              disable-days-before="submit_form.date_from"
+              disable-days-after="submit_form.date_to"
+              month = "months[fmonth+i]"
+              disable-navigation="true"
+            >   
+            </multiple-date-picker>
+          </div>
+        </div>
+      </div>
+
     </md-input-container>
     
     <md-input-container class="md-block">	
@@ -58,8 +72,10 @@
 	  </md-input-container>
 
     <div layout="row">
-	    <md-button flex="40" type="submit" class="md-primary md-hue-1" ng-click="plans_resp()">Generate Plans</md-button>
-      <md-progress-circular flex align="center" md-mode="determinate" value="{{circle}}"></md-progress-circular>
+     <md-button class="md-primary" flex="60" type="submit" ng-click="plans_resp()" ng-disabled="submited">Generate Plans</md-button>
+
+<!-- 	    <md-button   class="md-primary md-hue-1" >Generate Plans</md-button>
+ -->      <md-progress-circular flex align="center" md-mode="determinate" value="{{circle}}"></md-progress-circular>
     </div>
 
   </form>

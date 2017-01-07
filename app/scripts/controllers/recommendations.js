@@ -1,7 +1,7 @@
 'use strict';
 
  angular.module('hplannerFrontendApp')
- .controller('RecommendCtrl',function (UserPreferenceService, $scope, $location) {
+ .controller('RecommendCtrl',function (UserPreferenceService, $scope, $location,  $mdSidenav) {
 
  	var response = UserPreferenceService.recommendations['api_recommendations'];
  	if(response == -1)
@@ -52,6 +52,18 @@
     $scope.rnumber = num;
   };
 
+  $scope.changeRnumberSidenav = function(num){
+    $scope.rnumber = num;
+    $mdSidenav('left').close();
+  };
+
+  $scope.openSideNavPanel = function() {
+    $mdSidenav('left').open();
+  };
+  
+  $scope.closeSideNavPanel = function() {
+    $mdSidenav('left').close();
+  };
 
 
 });
