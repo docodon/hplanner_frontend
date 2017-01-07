@@ -16,6 +16,7 @@
  		
  		var resp = result['holiday_list'];
 		$scope.circle = 0;
+		$scope.fmonth = 0;
 
 		$scope.submit_form = {
 			holiday_list: [],
@@ -38,6 +39,21 @@
 
 	});
 
+ 	var months = [];
+    var date = moment($scope.date_from);
+    var monthNextYear = moment(date).add(366, 'd');
+
+	for(; date < monthNextYear; date.add(1, 'month')){
+   		 months.push(moment(date));
+	}
+	
+	$scope.months = months;
+
+    $scope.change_fmonth = function(num){
+    	$scope.fmonth = num;
+    };
+
+
 
  	$scope.submit = function(){
     	
@@ -57,6 +73,16 @@
  		});
 
     };
+
+    $scope.getNumber = function(num) {
+   	 if($scope.fmonth==12)
+      num=1;
+     var ar = [];
+   	 for(var i=0;i<num;i++)
+   	 	ar.push(i);
+   	 return ar;   
+	}
+
 
 
 });

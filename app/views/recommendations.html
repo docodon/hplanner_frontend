@@ -1,12 +1,30 @@
-<multiple-date-picker  
-	ng-model="recommendations[rnumber]['plan']" 
-	disable-days-before="date_from"
-	disable-days-after="date_to"
-	day-click=disableClick
-	month = 'months[0]'
-	disable-navigation="true"
->		
-</multiple-date-picker>
+<div layout="column" layout-align="space-between">
+	
+	<div ng-repeat="i in getNumber(3)" flex layout="row" layout-align="space-between">
+		<div ng-repeat="j  in getNumber(4)">
+			<multiple-date-picker  
+				ng-model="recommendations[rnumber]['plan']" 
+				disable-days-before="date_from"
+				disable-days-after="date_to"
+				day-click=disableClick
+				month = "months[i*4+j]"
+				disable-navigation="true"
+			>		
+			</multiple-date-picker>
+		</div>
+	</div>
+
+	<multiple-date-picker  
+		ng-model="recommendations[rnumber]['plan']" 
+		disable-days-before="date_from"
+		disable-days-after="date_to"
+		day-click=disableClick
+		month = "months[12]"
+		disable-navigation="true"
+	>		
+	</multiple-date-picker>
+
+</div>
 
 <md-select ng-model="rnumber" placeholder="" class="md-underline">
   <md-option ng-repeat="i in recommendations" value="{{i.id}}">recommendation {{i.id+1}} -  [{{i.fitness_score}}]</md-option>

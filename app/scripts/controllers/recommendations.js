@@ -40,5 +40,13 @@
    		 months.push(moment(date));
 	}
 	$scope.months = months;
+	
+	$scope.getNumber = function(num) {
+   	 var ar = [];
+   	 for(var i=0;i<num;i++)
+   	 	ar.push(i);
+   	 return ar;   
+	}
+
 
 });

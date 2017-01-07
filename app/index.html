@@ -18,7 +18,7 @@
 
 <body ng-app="hplannerFrontendApp" layout="column" layout-align="start start">
 
-  <md-toolbar class="md-hue-2 header">
+  <md-toolbar class="md-hue-2 header no-bottom-margin">
     <div class="md-toolbar-tools">
     <!--
       <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
@@ -42,15 +42,7 @@
     </md-toolbar>
 
 
-    <div class="container" layout="column">
-      <div ng-view=""></div>
-    </div>
-
-    <div>
-      <md-content class="md-padding">
-        <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-        </md-content>
-      </div>
+      <div ng-view="" style="width:100%"></div>
 
       <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
       <script>
