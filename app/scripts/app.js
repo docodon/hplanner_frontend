@@ -21,7 +21,8 @@ angular
     'ngMaterial',
     'mwl.calendar', 
     'ui.bootstrap',
-    'multipleDatePicker'
+    'multipleDatePicker',
+    'config'
   ])
   .config(function ($routeProvider,$httpProvider,$mdThemingProvider) {
     $routeProvider

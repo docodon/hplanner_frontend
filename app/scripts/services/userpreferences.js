@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('hplannerFrontendApp')
- .service('UserPreferenceService',function($http) {
+ .service('UserPreferenceService',function($http, ENV) {
 
  	this.recommendations = {'api_recommendations':-1};
 
@@ -9,7 +9,7 @@ angular.module('hplannerFrontendApp')
 		submit_form["holiday_list"] = date_list(submit_form["holiday_list"]);
 		submit_form["date_from"] = date_rep(submit_form["date_from"]);
 
-		return $http.post("http://localhost:3000/api/leaves/gen_plan.json",submit_form)
+		return $http.post(ENV.apiEndpoint + "/api/leaves/gen_plan.json",submit_form)
 		.then(function(response) {
 			 recommendations['api_recommendations'] = response.data;
 			 return response.data;
