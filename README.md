@@ -11,7 +11,7 @@ Run `grunt` for building and `grunt serve` for preview.
 
 ### Project overview 
 
-It is front end repo my [project](https://github.com/docodon/holiday_advisor)
+It is front end repo for [project](https://github.com/docodon/holiday_advisor)
 
 [Heroku link](https://secure-atoll-63871.herokuapp.com)
 
