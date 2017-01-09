@@ -11,21 +11,22 @@ Run `grunt` for building and `grunt serve` for preview.
 
 ### Project overview 
 
-	It is front end repo for my [project](https://github.com/docodon/holiday_advisor)
-	[Heroku](https://secure-atoll-63871.herokuapp.com)
+It is front end repo my [project](https://github.com/docodon/holiday_advisor)
+
+[Heroku link](https://secure-atoll-63871.herokuapp.com)
 
 ###  Stack details 
 	
-	* npm
-	* Bower 
-	* Anuglarjs
-	* Material design
-	* [Multiple date picker](https://github.com/arca-computing/MultipleDatePicker)  
+* npm
+* Bower 
+* Anuglarjs
+* Material design
+* [Multiple date picker](https://github.com/arca-computing/MultipleDatePicker)  
 
 
 ### Future task  
     
-    * Speeding up the front end its lagging a bit ! 
+* Speeding up the front end its lagging a bit ! 
 
 
 _** suggestions or collaborations are highly appreciated **_
