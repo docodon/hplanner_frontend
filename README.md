@@ -29,4 +29,4 @@ It is front end repo my [project](https://github.com/docodon/holiday_advisor)
 * Speeding up the front end its lagging a bit ! 
 
 
-_** suggestions or collaborations are highly appreciated **_
+** suggestions or collaborations are highly appreciated **
