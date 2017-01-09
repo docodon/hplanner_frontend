@@ -14,7 +14,7 @@
  
  	response.then(function(result){
  		
- 		var resp = result['holiday_list'];
+ 		var resp = result.holiday_list ;
 		$scope.circle = 0;
 		$scope.fmonth = 0;
     $scope.submited = false; 
@@ -22,9 +22,9 @@
     $scope.submit_form = {
 			holiday_list: [],
 			leaves: 0
-		}
+		};
 
- 		if(resp==-1)
+ 		if(resp===-1)
  		{
  			$scope.submit_form.date_from = moment.now();
  			$scope.submit_form.date_to = moment.now()+365;
@@ -32,10 +32,12 @@
  		else
  		{
  			for (var i = 0; i < resp.length; i++) 
-    			$scope.submit_form.holiday_list.push( moment(resp[i]) )
+    	{		
+          $scope.submit_form.holiday_list.push( moment(resp[i]) );
+      }
 
- 			$scope.submit_form.date_from = moment(result['date_from'])
- 			$scope.submit_form.date_to = moment(result['date_to'])	
+ 			$scope.submit_form.date_from = moment(result.date_from);
+ 			$scope.submit_form.date_to = moment(result.date_to);	
 		}
 
 	});
@@ -69,21 +71,27 @@
 
  		UserPreferenceService.plans($scope.submit_form,UserPreferenceService.recommendations)
  		.then(function(result){
- 			$location.path("/recommendations")
+ 			$location.path("/recommendations");
  		},function(result){
- 			$location.path("/") 			
+ 			$location.path("/"); 			
  		});
 
     };
 
     $scope.getNumber = function(num) {
-   	 if($scope.fmonth==12)
-      num=1;
-     var ar = [];
-   	 for(var i=0;i<num;i++)
-   	 	ar.push(i);
-   	 return ar;   
-	}
+   	 if($scope.fmonth===12)
+     { 
+       num=1;
+     }
+      var ar = [];
+   	 
+     for(var i=0;i<num;i++)
+   	 {	
+       ar.push(i);
+   	 }
+     
+     return ar;   
+	  };
 
 
 
