@@ -7,6 +7,25 @@ version 0.15.1.
 
 Run `grunt` for building and `grunt serve` for preview.
 
-## Testing
 
-Running `grunt test` will run the unit tests with karma.
+
+### Project overview 
+
+	It is front end repo for my [project](https://github.com/docodon/holiday_advisor)
+	[Heroku](https://secure-atoll-63871.herokuapp.com)
+
+###  Stack details 
+	
+	* npm
+	* Bower 
+	* Anuglarjs
+	* Material design
+	* [Multiple date picker](https://github.com/arca-computing/MultipleDatePicker)  
+
+
+### Future task  
+    
+    * Speeding up the front end its lagging a bit ! 
+
+
+_** suggestions or collaborations are highly appreciated **_
