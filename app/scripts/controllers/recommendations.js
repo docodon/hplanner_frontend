@@ -42,20 +42,11 @@
 
 	for(; date < monthNextYear; date.add(1, 'month')){
    		 months.push(moment(date));
-	}
+  }
 
 	$scope.months = months;
-	
-	$scope.getNumber = function(num) {
-   	 var ar = [];
-   	  for(var i=0;i<num;i++)
-   	  {	
-        ar.push(i);
-      }
-     return ar;   
-	};
 
-  $scope.change_rnumber = function(num){
+  $scope.changeRnumber = function(num){
     $scope.rnumber = num;
   };
 

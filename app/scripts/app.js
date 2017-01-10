@@ -19,8 +19,6 @@ angular
     'ngSanitize',
     'ngTouch',
     'ngMaterial',
-    'mwl.calendar', 
-    'ui.bootstrap',
     'multipleDatePicker',
     'config'
   ])

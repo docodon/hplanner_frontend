@@ -8,7 +8,7 @@
  * Controller of the hplannerFrontendApp
  */
  angular.module('hplannerFrontendApp')
- .controller('MainCtrl',function (HolidayListService, UserPreferenceService, $scope, $location, $interval) {
+ .controller('MainCtrl',function (HolidayListService, UserPreferenceService, $scope, $location, $interval, $mdSidenav) {
 
  	var response = HolidayListService.dates();
  
@@ -33,7 +33,7 @@
  		{
  			for (var i = 0; i < resp.length; i++) 
     	{		
-          $scope.submit_form.holiday_list.push( moment(resp[i]) );
+        $scope.submit_form.holiday_list.push( moment(resp[i]) );
       }
 
  			$scope.submit_form.date_from = moment(result.date_from);
@@ -44,7 +44,7 @@
 
  	var months = [];
     var date = moment($scope.date_from);
-    var monthNextYear = moment(date).add(366, 'd');
+    var monthNextYear = moment(date).add(550, 'd');
 
 	for(; date < monthNextYear; date.add(1, 'month')){
    		 months.push(moment(date));
@@ -52,14 +52,13 @@
 	
 	$scope.months = months;
 
-  $scope.change_fmonth = function(num){
+  $scope.changeFmonth = function(num){
   	$scope.fmonth = num;
   };
 
 
-
  	$scope.submit = function(){
-    	
+
  		$interval(function() {
 			$scope.circle += 1;
         	if ($scope.circle > 100) {
@@ -78,21 +77,19 @@
 
     };
 
-    $scope.getNumber = function(num) {
-   	 if($scope.fmonth===12)
-     { 
-       num=1;
-     }
-      var ar = [];
-   	 
-     for(var i=0;i<num;i++)
-   	 {	
-       ar.push(i);
-   	 }
-     
-     return ar;   
-	  };
 
+  $scope.changeFmonthSidenav = function(num){
+    $scope.fmonth = num;
+    $mdSidenav('left').close();
+  };
+
+  $scope.openSideNavPanel = function() {
+    $mdSidenav('left').open();
+  };
+  
+  $scope.closeSideNavPanel = function() {
+    $mdSidenav('left').close();
+  };
 
 
 });

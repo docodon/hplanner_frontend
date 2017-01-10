@@ -1,14 +1,14 @@
 <div layout="column" flex class="padding-left-5 padding-right-5  padding-bottom-5">
 
-	<md-nav-bar hide-xs md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+	<md-nav-bar hide-xs md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links" md-no-ink>
       
-	  	<md-nav-item class="padding-left-5" md-nav-click="change_rnumber(0)" name="page1">r1</md-nav-item>
+	  	<md-nav-item class="padding-left-5" md-nav-click="changeRnumber(0)" name="page1">r1</md-nav-item>
 
-  		<md-nav-item md-nav-click="change_rnumber(1)" name="page2">r2</md-nav-item>
+  		<md-nav-item md-nav-click="changeRnumber(1)" name="page2">r2</md-nav-item>
     
-  		<md-nav-item md-nav-click="change_rnumber(2)" name="page3">r3</md-nav-item>
+  		<md-nav-item md-nav-click="changeRnumber(2)" name="page3">r3</md-nav-item>
 
-  		<md-nav-item md-nav-click="change_rnumber(3)" name="page4">r4</md-nav-item>
+  		<md-nav-item md-nav-click="changeRnumber(3)" name="page4">r4</md-nav-item>
 
 	</md-nav-bar>
 
@@ -18,7 +18,6 @@
         <md-icon md-svg-icon="images/icons/menu.svg"></md-icon>
    		</md-button>
     </div>
-
  	<md-sidenav hide-gt-xs class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
     	<md-toolbar layout="row">
      		<div class="md-toolbar-tools">
@@ -34,24 +33,216 @@
     	</md-toolbar> 
 	
 		<md-list layout="column">
-			<md-button ng-repeat="i in getNumber(4)" flex class="md-primary" ng-click="changeRnumberSidenav(i)">recommendation {{i+1}}</md-button>
+			<md-button  flex class="md-primary" ng-click="changeRnumberSidenav(0)">recommendation 1</md-button>
+			<md-button  flex class="md-primary" ng-click="changeRnumberSidenav(1)">recommendation 2</md-button>
+			<md-button  flex class="md-primary" ng-click="changeRnumberSidenav(2)">recommendation 3</md-button>
+			<md-button  flex class="md-primary" ng-click="changeRnumberSidenav(3)">recommendation 4</md-button>
+
 		</md-list>    
 	</md-sidenav>
 
 
 
-	<div ng-repeat="i in getNumber(3)" layout="row" layout-xs="column" class="padding-left-1 padding-right-1">	
-		<div class="padding-left-1 padding-right-1 padding-top-1" ng-repeat="j  in getNumber(5)">
+	<div layout="row" layout-xs="column" class="padding-left-1 padding-right-1">	
+		<div class="padding-left-1 padding-right-1 padding-top-1">
 			<multiple-date-picker  
 				ng-model="recommendations[rnumber]['plan']" 
 				disable-days-before="date_from"
 				disable-days-after="date_to"
 				day-click=disableClick
-				month = "months[i*5+j]"
+				month = "months[0]"
 				disable-navigation="true"
 			>		
 			</multiple-date-picker>
 		</div>
+
+
+		<div class="padding-left-1 padding-right-1 padding-top-1">
+			<multiple-date-picker  
+				ng-model="recommendations[rnumber]['plan']" 
+				disable-days-before="date_from"
+				disable-days-after="date_to"
+				day-click=disableClick
+				month = "months[1]"
+				disable-navigation="true"
+			>		
+			</multiple-date-picker>
+		</div>
+
+
+		<div class="padding-left-1 padding-right-1 padding-top-1">
+			<multiple-date-picker  
+				ng-model="recommendations[rnumber]['plan']" 
+				disable-days-before="date_from"
+				disable-days-after="date_to"
+				day-click=disableClick
+				month = "months[2]"
+				disable-navigation="true"
+			>		
+			</multiple-date-picker>
+		</div>
+
+
+		<div class="padding-left-1 padding-right-1 padding-top-1">
+			<multiple-date-picker  
+				ng-model="recommendations[rnumber]['plan']" 
+				disable-days-before="date_from"
+				disable-days-after="date_to"
+				day-click=disableClick
+				month = "months[3]"
+				disable-navigation="true"
+			>		
+			</multiple-date-picker>
+		</div>
+
+
+		<div class="padding-left-1 padding-right-1 padding-top-1">
+			<multiple-date-picker  
+				ng-model="recommendations[rnumber]['plan']" 
+				disable-days-before="date_from"
+				disable-days-after="date_to"
+				day-click=disableClick
+				month = "months[4]"
+				disable-navigation="true"
+			>		
+			</multiple-date-picker>
+		</div>
+
 	</div>
+
+	<div layout="row" layout-xs="column" class="padding-left-1 padding-right-1">	
+		<div class="padding-left-1 padding-right-1 padding-top-1">
+			<multiple-date-picker  
+				ng-model="recommendations[rnumber]['plan']" 
+				disable-days-before="date_from"
+				disable-days-after="date_to"
+				day-click=disableClick
+				month = "months[5]"
+				disable-navigation="true"
+			>		
+			</multiple-date-picker>
+		</div>
+
+
+		<div class="padding-left-1 padding-right-1 padding-top-1">
+			<multiple-date-picker  
+				ng-model="recommendations[rnumber]['plan']" 
+				disable-days-before="date_from"
+				disable-days-after="date_to"
+				day-click=disableClick
+				month = "months[6]"
+				disable-navigation="true"
+			>		
+			</multiple-date-picker>
+		</div>
+
+
+		<div class="padding-left-1 padding-right-1 padding-top-1">
+			<multiple-date-picker  
+				ng-model="recommendations[rnumber]['plan']" 
+				disable-days-before="date_from"
+				disable-days-after="date_to"
+				day-click=disableClick
+				month = "months[7]"
+				disable-navigation="true"
+			>		
+			</multiple-date-picker>
+		</div>
+
+
+		<div class="padding-left-1 padding-right-1 padding-top-1">
+			<multiple-date-picker  
+				ng-model="recommendations[rnumber]['plan']" 
+				disable-days-before="date_from"
+				disable-days-after="date_to"
+				day-click=disableClick
+				month = "months[8]"
+				disable-navigation="true"
+			>		
+			</multiple-date-picker>
+		</div>
+
+
+		<div class="padding-left-1 padding-right-1 padding-top-1">
+			<multiple-date-picker  
+				ng-model="recommendations[rnumber]['plan']" 
+				disable-days-before="date_from"
+				disable-days-after="date_to"
+				day-click=disableClick
+				month = "months[9]"
+				disable-navigation="true"
+			>		
+			</multiple-date-picker>
+		</div>
+
+	</div>
+
+	<div layout="row" layout-xs="column" class="padding-left-1 padding-right-1">	
+		<div class="padding-left-1 padding-right-1 padding-top-1">
+			<multiple-date-picker  
+				ng-model="recommendations[rnumber]['plan']" 
+				disable-days-before="date_from"
+				disable-days-after="date_to"
+				day-click=disableClick
+				month = "months[10]"
+				disable-navigation="true"
+			>		
+			</multiple-date-picker>
+		</div>
+
+
+		<div class="padding-left-1 padding-right-1 padding-top-1">
+			<multiple-date-picker  
+				ng-model="recommendations[rnumber]['plan']" 
+				disable-days-before="date_from"
+				disable-days-after="date_to"
+				day-click=disableClick
+				month = "months[11]"
+				disable-navigation="true"
+			>		
+			</multiple-date-picker>
+		</div>
+
+
+		<div class="padding-left-1 padding-right-1 padding-top-1">
+			<multiple-date-picker  
+				ng-model="recommendations[rnumber]['plan']" 
+				disable-days-before="date_from"
+				disable-days-after="date_to"
+				day-click=disableClick
+				month = "months[12]"
+				disable-navigation="true"
+			>		
+			</multiple-date-picker>
+		</div>
+
+
+		<div class="padding-left-1 padding-right-1 padding-top-1">
+			<multiple-date-picker  
+				ng-model="recommendations[rnumber]['plan']" 
+				disable-days-before="date_from"
+				disable-days-after="date_to"
+				day-click=disableClick
+				month = "months[13]"
+				disable-navigation="true"
+			>		
+			</multiple-date-picker>
+		</div>
+
+
+		<div class="padding-left-1 padding-right-1 padding-top-1">
+			<multiple-date-picker  
+				ng-model="recommendations[rnumber]['plan']" 
+				disable-days-before="date_from"
+				disable-days-after="date_to"
+				day-click=disableClick
+				month = "months[14]"
+				disable-navigation="true"
+			>		
+			</multiple-date-picker>
+		</div>
+
+	</div>
+
 	
 </div>

@@ -1,14 +1,14 @@
-<div flex class="padding-left-5 padding-right-5 padding-bottom-2">
+<div flex class="padding-left-5 padding-right-5 padding-bottom-5">
 
 <md-nav-bar hide-xs md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
       
-  <md-nav-item  md-nav-click="change_fmonth(0)" name="page1">1-4</md-nav-item>
+  <md-nav-item  md-nav-click="changeFmonth(0)" name="page1">1-4</md-nav-item>
 
-  <md-nav-item md-nav-click="change_fmonth(4)" name="page2">5-8</md-nav-item>
+  <md-nav-item md-nav-click="changeFmonth(4)" name="page2">5-8</md-nav-item>
     
-  <md-nav-item md-nav-click="change_fmonth(8)" name="page3">9-12</md-nav-item>
+  <md-nav-item md-nav-click="changeFmonth(8)" name="page3">9-12</md-nav-item>
 
-  <md-nav-item md-nav-click="change_fmonth(12)" name="page4">13-13</md-nav-item>
+  <md-nav-item md-nav-click="changeFmonth(12)" name="page4">13-13</md-nav-item>
 
 </md-nav-bar>
 
@@ -16,49 +16,104 @@
     ng-model="submit_form.holiday_list" 
     disable-days-before="submit_form.date_from"
     disable-days-after="submit_form.date_to"
-    month = "months[fmonth+i]"
+    month = "months[fmonth]"
     disable-navigation="true"
     hide
 >   
 </multiple-date-picker>
 
+<md-sidenav class="md-sidenav-left md-whiteframe-z2" hide-gt-xs md-component-id="left">
+    <md-toolbar layout="row">
+      <div class="md-toolbar-tools">
+          <h4>
+              <span>Months from today</span>
+          </h4>
+          <span flex></span>
+          <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="closeSideNavPanel()">
+              <md-tooltip>Close Side Panel</md-tooltip>
+              <md-icon class="small-icon" md-svg-icon="images/icons/cross.svg"></md-icon>
+          </md-button>
+      </div>
+  </md-toolbar>  
+  <md-list  layout="column">
+    <md-button  flex class="md-primary" ng-click="changeFmonthSidenav(0)">1 - 4</md-button>
+    <md-button  flex class="md-primary" ng-click="changeFmonthSidenav(4)">5 - 8</md-button>
+    <md-button  flex class="md-primary" ng-click="changeFmonthSidenav(8)">9 - 12</md-button>
+    <md-button  flex class="md-primary" ng-click="changeFmonthSidenav(12)">13 - 13</md-button>
+  </md-list>    
+</md-sidenav>
+ 
 
+<div hide-gt-xs layout="row"> 
+  <span flex="80"></span>
+  <md-button flex class="md-icon-button md-primary icon-1" aria-label="Settings" ng-click="openSideNavPanel()">
+    <md-icon md-svg-icon="images/icons/menu.svg"></md-icon>
+  </md-button>
+</div>
+
+<div flex ng-cloak>
   <form ng-submit="submit()" novalidate>
     <md-input-container class="md-block"> 
-      <div class="padding-bottom-2">
+      <div class="padding-bottom-25px" >
         <label class="font-10">
           Select prefered dates *
         </label>
       </div>
 
-      <div flex layout="row" hide-xs style="top-padding: 5%">
-        <div ng-repeat="i  in getNumber(4)">
+      <div flex layout-xs="column" layout-gt-xs="row">
+        <div>
           <div flex class="padding-left-3 padding-right-3 padding-bottom-7">
             <multiple-date-picker  
               ng-model="submit_form.holiday_list" 
               disable-days-before="submit_form.date_from"
               disable-days-after="submit_form.date_to"
-              month = "months[fmonth+i]"
+              month = "months[fmonth+0]"
               disable-navigation="true"
             >   
             </multiple-date-picker>
           </div>
         </div>
-      </div>
 
-      <div flex layout="column" hide-gt-xs class="padding-top-8">
-        <div ng-repeat="i  in getNumber(13)">
+        <div>
           <div flex class="padding-left-3 padding-right-3 padding-bottom-7">
             <multiple-date-picker  
               ng-model="submit_form.holiday_list" 
               disable-days-before="submit_form.date_from"
               disable-days-after="submit_form.date_to"
-              month = "months[fmonth+i]"
+              month = "months[fmonth+1]"
               disable-navigation="true"
             >   
             </multiple-date-picker>
           </div>
         </div>
+
+
+        <div>
+          <div flex class="padding-left-3 padding-right-3 padding-bottom-7">
+            <multiple-date-picker  
+              ng-model="submit_form.holiday_list" 
+              disable-days-before="submit_form.date_from"
+              disable-days-after="submit_form.date_to"
+              month = "months[fmonth+2]"
+              disable-navigation="true"
+            >   
+            </multiple-date-picker>
+          </div>
+        </div>
+
+        <div>
+          <div flex class="padding-left-3 padding-right-3 padding-bottom-7">
+            <multiple-date-picker  
+              ng-model="submit_form.holiday_list" 
+              disable-days-before="submit_form.date_from"
+              disable-days-after="submit_form.date_to"
+              month = "months[fmonth+3]"
+              disable-navigation="true"
+            >   
+            </multiple-date-picker>
+          </div>
+        </div>
+
       </div>
 
     </md-input-container>
@@ -72,13 +127,11 @@
 	  </md-input-container>
 
     <div layout="row">
-     <md-button class="md-primary" flex="60" type="submit" ng-click="plans_resp()" ng-disabled="submited">Generate Plans</md-button>
+     <md-button class="md-primary" flex="60" type="submit" ng-click="plans_resp()" md-no-ink ng-disabled="submited">Generate Plans</md-button>
 
-<!-- 	    <md-button   class="md-primary md-hue-1" >Generate Plans</md-button>
- -->      <md-progress-circular flex align="center" md-mode="determinate" value="{{circle}}"></md-progress-circular>
+      <md-progress-circular flex align="center" md-mode="determinate" value="{{circle}}"></md-progress-circular>
     </div>
 
   </form>
-	
-
+</div>
 </div>
