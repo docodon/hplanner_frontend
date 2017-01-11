@@ -17,6 +17,7 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
+    'ngTouch',
     'ngMaterial',
     'multipleDatePicker',
     'config'
