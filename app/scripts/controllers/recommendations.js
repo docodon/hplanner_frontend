@@ -32,6 +32,7 @@
  	}
 
  	$scope.disableClick = function(event) {
+    console.log("herre");
         event.preventDefault();
     };
 

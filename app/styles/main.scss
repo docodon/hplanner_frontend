@@ -177,3 +177,7 @@ body {
 .padding-bottom-25px{
   padding-bottom: 25px;
 }
+
+.non-clickable{
+  pointer-events:none;
+}
