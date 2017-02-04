@@ -117,17 +117,28 @@
       </div>
 
     </md-input-container>
-    
-    <md-input-container class="md-block">	
-   		<label>
-   			  Prefered number of leaves this year
-   	  </label>
-		
-	    <input required type="number"  ng-model="submit_form.leaves" min="0" />
-	  </md-input-container>
+
+    <div flex layout-xs="column" layout-gt-xs="row">
+        <md-input-container flex="45" class="md-block">	
+       		<label>
+       			  Prefered number of leaves this year
+       	  </label>
+    	    <input required type="number"  ng-model="submit_form.leaves" min="0" />
+    	  </md-input-container>
+        
+        <div flex></div>
+        
+        <md-input-container flex="45" class="md-block">
+          <label>Your description</label>
+          <md-select ng-model="submit_form.user_status" required>
+              <md-option ng-value="opt.id" ng-repeat="opt in user_options">{{ opt.desc }}</md-option>
+          </md-select>
+        </md-input-container>      
+    </div>
+
 
     <div layout="row">
-     <md-button class="md-primary" flex="60" type="submit" ng-click="plans_resp()" md-no-ink ng-disabled="submited">Generate Plans</md-button>
+     <md-button class="md-primary" flex="60" type="submit" ng-disabled="submitted" md-no-ink>Generate Plans</md-button>
 
       <md-progress-circular flex align="center" md-mode="determinate" value="{{circle}}"></md-progress-circular>
     </div>

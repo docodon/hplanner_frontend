@@ -2,13 +2,13 @@
 
 	<md-nav-bar hide-xs md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links" md-no-ink>
       
-	  	<md-nav-item class="padding-left-5" md-nav-click="changeRnumber(0)" name="page1">r1</md-nav-item>
+	  	<md-nav-item class="padding-left-5" md-nav-click="changeRnumber(0)" name="page1">r1 [{{recommendations[0]['fitness_score']}}]</md-nav-item>
 
-  		<md-nav-item md-nav-click="changeRnumber(1)" name="page2">r2</md-nav-item>
+  		<md-nav-item md-nav-click="changeRnumber(1)" name="page2">r2 [{{recommendations[1]['fitness_score']}}] </md-nav-item>
     
-  		<md-nav-item md-nav-click="changeRnumber(2)" name="page3">r3</md-nav-item>
+  		<md-nav-item md-nav-click="changeRnumber(2)" name="page3">r3 [{{recommendations[2]['fitness_score']}}]</md-nav-item>
 
-  		<md-nav-item md-nav-click="changeRnumber(3)" name="page4">r4</md-nav-item>
+  		<md-nav-item md-nav-click="changeRnumber(3)" name="page4">r4 [{{recommendations[3]['fitness_score']}}]</md-nav-item>
 
 	</md-nav-bar>
 
@@ -33,10 +33,10 @@
     	</md-toolbar> 
 	
 		<md-list layout="column">
-			<md-button  flex class="md-primary" ng-click="changeRnumberSidenav(0)">recommendation 1</md-button>
-			<md-button  flex class="md-primary" ng-click="changeRnumberSidenav(1)">recommendation 2</md-button>
-			<md-button  flex class="md-primary" ng-click="changeRnumberSidenav(2)">recommendation 3</md-button>
-			<md-button  flex class="md-primary" ng-click="changeRnumberSidenav(3)">recommendation 4</md-button>
+			<md-button  flex class="md-primary" ng-click="changeRnumberSidenav(0)">recommendation1 [{{recommendations[0]['fitness_score']}}]</md-button>
+			<md-button  flex class="md-primary" ng-click="changeRnumberSidenav(1)">recommendation 2 [{{recommendations[1]['fitness_score']}}]</md-button>
+			<md-button  flex class="md-primary" ng-click="changeRnumberSidenav(2)">recommendation 3 [{{recommendations[2]['fitness_score']}}]</md-button>
+			<md-button  flex class="md-primary" ng-click="changeRnumberSidenav(3)">recommendation 4 [{{recommendations[3]['fitness_score']}}]</md-button>
 
 		</md-list>    
 	</md-sidenav>

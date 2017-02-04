@@ -18,7 +18,8 @@
 		$scope.circle = 0;
 		$scope.fmonth = 0;
     $scope.submited = false; 
-		
+		$scope.user_options = result.options;
+
     $scope.submit_form = {
 			holiday_list: [],
 			leaves: 0
@@ -58,7 +59,10 @@
 
 
  	$scope.submit = function(){
-
+ 
+    if( !$scope.submit_form.user_status || (!$scope.submit_form.leaves && $scope.submit_form.leaves!=0))
+      return ;
+    
  		$interval(function() {
 			$scope.circle += 1;
         	if ($scope.circle > 100) {
