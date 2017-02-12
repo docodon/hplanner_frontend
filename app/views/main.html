@@ -119,7 +119,7 @@
     </md-input-container>
 
     <div flex layout-xs="column" layout-gt-xs="row">
-        <md-input-container flex="45" class="md-block">	
+        <md-input-container flex="45" flex-xs="80" class="md-block">	
        		<label>
        			  Prefered number of leaves this year
        	  </label>
@@ -128,7 +128,7 @@
         
         <div flex></div>
         
-        <md-input-container flex="45" class="md-block">
+        <md-input-container flex="45"  flex-xs="80" class="md-block">
           <label>Your description</label>
           <md-select ng-model="submit_form.user_status" required>
               <md-option ng-value="opt.id" ng-repeat="opt in user_options">{{ opt.desc }}</md-option>
